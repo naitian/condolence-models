@@ -11,8 +11,8 @@ if os.path.isfile(requirementPath):
         install_requires = f.read().splitlines()
 
 setuptools.setup(
-    name="condolence_models",
-    version="0.0.1",
+    name="condolence-models",
+    version="1.0.0",
     author="Naitian Zhou",
     author_email="naitian@umich.edu",
     description="Detecting condolence, distress, and empathy in text",

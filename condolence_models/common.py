@@ -19,13 +19,13 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message
 logger = logging.getLogger(__name__)
 
 
-def load_model(model_type, path, device="cpu"):
+def load_model(model_type, path, device):
     if not os.path.isfile(path):
         logger.info(f'Model {model_type} does not exist at {path}. Attempting to download it.')
         model = f'{model_type}_model'
         fetch_pretrained_model(model, path)
     model = BertClassifier(2)
-    model.load_state_dict(torch.load(path))
+    model.load_state_dict(torch.load(path, map_location=device))
     model.to(device)
     model.eval()
     return model
@@ -83,6 +83,7 @@ def fetch_pretrained_model(model, model_path):
 
     logger.info(f'Model {model} was downloaded to a tmp file.')
     logger.info(f'Copying tmp file to {model_path}.')
+    os.makedirs(os.path.dirname(model_path), exist_ok=True)
     with open(model_path, 'wb') as cache_file:
         shutil.copyfileobj(temp_file, cache_file)
     logger.info(f'Copied tmp model file to {model_path}.')
