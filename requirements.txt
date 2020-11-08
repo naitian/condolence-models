@@ -1,0 +1,10 @@
+torch
+pytorch-transformers
+markdown
+beautifulsoup4
+numpy
+math
+tqdm
+simpletransformers
+pandas
+numpy

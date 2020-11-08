@@ -22,6 +22,9 @@ If `pip` is installed, question-intimacy could be installed directly from it:
     numpy
     math
     tqdm
+    simpletransformers
+    pandas
+    numpy
     
 ## Usage and Example
 
