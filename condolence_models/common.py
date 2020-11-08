@@ -33,8 +33,18 @@ def load_model(model_type, path, device="cpu"):
 
 def fetch_pretrained_model(model, model_path):
     PRETRAINED_MODEL_ARCHIVE_MAP = {
-        'condolence_model': ['http://jurgens.people.si.umich.edu/models/condolence_model.pth'],
-        'distress_model': ['http://jurgens.people.si.umich.edu/models/distress_model.pth'],
+        'condolence_model': [
+            'http://www-personal.umich.edu/~naitian/files/condolence_model.pth',
+            'http://jurgens.people.si.umich.edu/models/condolence_model.pth'
+        ],
+        'distress_model': [
+            'http://www-personal.umich.edu/~naitian/files/distress_model.pth',
+            'http://jurgens.people.si.umich.edu/models/distress_model.pth'
+        ],
+        'empathy_model': [
+            'http://www-personal.umich.edu/~naitian/files/empathy.tar.gz',
+            'http://jurgens.people.si.umich.edu/models/empathy_model.tar.gz'
+        ],
     }
     assert model in PRETRAINED_MODEL_ARCHIVE_MAP
     model_urls = PRETRAINED_MODEL_ARCHIVE_MAP[model]
