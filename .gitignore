@@ -2,3 +2,7 @@ condolence_models/models
 __pycache__/
 
 *.swp
+
+build/
+dist/
+*.egg-info/
